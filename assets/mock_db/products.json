@@ -1,0 +1,82 @@
+[
+  {
+    "id": "p1",
+    "name": "Outfit Hoodie",
+    "price": 249000,
+    "image": "assets/images/prod_outfit.png",
+    "category": "Outfit",
+    "rating": 4.5
+  },
+  {
+    "id": "p2",
+    "name": "Outfit T-Shirt",
+    "price": 99000,
+    "image": "assets/images/prod_outfit.png",
+    "category": "Outfit",
+    "rating": 4.2
+  },
+  {
+    "id": "p3",
+    "name": "Nasi Bento",
+    "price": 39000,
+    "image": "assets/images/prod_food.png",
+    "category": "Makanan",
+    "rating": 4.7
+  },
+  {
+    "id": "p4",
+    "name": "Sushi Box",
+    "price": 59000,
+    "image": "assets/images/prod_food.png",
+    "category": "Makanan",
+    "rating": 4.6
+  },
+  {
+    "id": "p5",
+    "name": "Earbuds Pro",
+    "price": 499000,
+    "image": "assets/images/prod_gadget.png",
+    "category": "Gadget",
+    "rating": 4.4
+  },
+  {
+    "id": "p6",
+    "name": "Powerbank 10000mAh",
+    "price": 199000,
+    "image": "assets/images/prod_gadget.png",
+    "category": "Gadget",
+    "rating": 4.1
+  },
+  {
+    "id": "p7",
+    "name": "Lampu Meja",
+    "price": 129000,
+    "image": "assets/images/prod_gadget.png",
+    "category": "Rumah",
+    "rating": 4.0
+  },
+  {
+    "id": "p8",
+    "name": "Bantal Sofa",
+    "price": 149000,
+    "image": "assets/images/prod_outfit.png",
+    "category": "Rumah",
+    "rating": 4.3
+  },
+  {
+    "id": "p9",
+    "name": "Cake Slice",
+    "price": 45000,
+    "image": "assets/images/prod_food.png",
+    "category": "Makanan",
+    "rating": 4.8
+  },
+  {
+    "id": "p10",
+    "name": "Jaket Waterproof",
+    "price": 349000,
+    "image": "assets/images/prod_outfit.png",
+    "category": "Outfit",
+    "rating": 4.6
+  }
+]

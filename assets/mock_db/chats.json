@@ -1,0 +1,54 @@
+[
+  {
+    "id": "1",
+    "name": "BlueSea Support",
+    "avatar": "assets/images/logo_copy.png",
+    "messages": [
+      {
+        "text": "Halo! Ada yang bisa kami bantu?",
+        "isMe": false,
+        "time": "2025-09-01T08:30:00Z"
+      }
+    ],
+    "unread": 1
+  },
+  {
+    "id": "2",
+    "name": "Seller Outfit Pro",
+    "avatar": "assets/images/avatar_2.png",
+    "messages": [
+      {
+        "text": "Stok ukuran M tersedia ya!",
+        "isMe": false,
+        "time": "2025-09-02T10:10:00Z"
+      }
+    ],
+    "unread": 0
+  },
+  {
+    "id": "3",
+    "name": "Food Express",
+    "avatar": "assets/images/avatar_3.png",
+    "messages": [
+      {
+        "text": "Pesanan Anda sedang diproses.",
+        "isMe": false,
+        "time": "2025-09-03T12:20:00Z"
+      }
+    ],
+    "unread": 2
+  },
+  {
+    "id": "4",
+    "name": "Gadget Store",
+    "avatar": "assets/images/avatar_2.png",
+    "messages": [
+      {
+        "text": "Promo 20% hari ini!",
+        "isMe": false,
+        "time": "2025-09-04T09:00:00Z"
+      }
+    ],
+    "unread": 0
+  }
+]

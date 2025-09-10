@@ -1,33 +1,46 @@
-// ...............
-
 import 'package:flutter/material.dart';
-import 'pages/login_page.dart';
-import 'pages/account_page.dart';
-import 'pages/cart_page.dart';
-import 'pages/home_page.dart';
-import 'pages/list_chat.dart';
-import 'pages/detail_chat.dart';
+import 'package:provider/provider.dart';
+import 'src/theme/app_theme.dart';
+import 'src/pages/login_page.dart';
+import 'src/pages/root_shell.dart';
+import 'src/state/auth_state.dart';
+import 'src/state/cart_state.dart';
+import 'src/state/chat_state.dart';
+import 'src/state/orders_state.dart';
+import 'src/state/theme_state.dart';
+import 'src/services/mock_api.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await MockApi.loadAssets();
+  runApp(const BlueSeaApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class BlueSeaApp extends StatelessWidget {
+  const BlueSeaApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      initialRoute: 'HomePage',
-      routes: {
-        'LoginPage': (context) => const LoginPage(),
-        'AccountPage': (context) => const AccountPage(),
-        'CartPage': (context) => const CartPage(),
-        'HomePage': (context) => const Homepage(),
-        "ListChat": (context) => ChatListPage(),
-        "ChatDetail": (context) => ChatScreen(contactName: 'Nike Official'),
-      },
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => AuthState()),
+        ChangeNotifierProvider(create: (_) => CartState()),
+        ChangeNotifierProvider(create: (_) => ChatState()),
+        ChangeNotifierProvider(create: (_) => OrdersState()),
+        ChangeNotifierProvider(create: (_) => ThemeState()),
+      ],
+      child: Consumer2<AuthState, ThemeState>(
+        builder: (context, auth, theme, _) {
+          return MaterialApp(
+            title: 'Blue Sea Shop',
+            debugShowCheckedModeBanner: false,
+            theme: AppTheme.lightTheme,
+            darkTheme: AppTheme.darkTheme,
+            themeMode: theme.isDark ? ThemeMode.dark : ThemeMode.light,
+            home: auth.isLoggedIn ? const RootShell() : const LoginPage(),
+          );
+        },
+      ),
     );
   }
 }
