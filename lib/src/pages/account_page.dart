@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import 'login_page.dart';
 import 'chat_list_page.dart';
+import 'profile_page.dart';
+import 'change_password_page.dart';
+import 'notifikasi_page.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});
@@ -56,16 +59,22 @@ class AccountPage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
-          ...menu.map((m) => ListTile(
-                leading: Icon(m['icon'] as IconData, color: AppTheme.deepBlue),
-                title: Text(m['title'] as String),
-                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-                onTap: () {
-                  if ((m['title'] as String) == 'Help & Support') {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (_) => const ChatListPage()));
-                  }
-                },
-              )),
+            ...menu.map((m) => ListTile(
+              leading: Icon(m['icon'] as IconData, color: AppTheme.deepBlue),
+              title: Text(m['title'] as String),
+              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+              onTap: () {
+              if ((m['title'] as String) == 'Profile') {
+                Navigator.of(context).push(MaterialPageRoute(builder: (_) => const ProfilePage()));
+              } else if ((m['title'] as String) == 'Change Password') {
+                Navigator.of(context).push(MaterialPageRoute(builder: (_) => const ChangePasswordPage()));
+              } else if ((m['title'] as String) == 'Notifications') {
+                Navigator.of(context).push(MaterialPageRoute(builder: (_) => NotifikasiPage()));
+              } else if ((m['title'] as String) == 'Help & Support') {
+                Navigator.of(context).push(MaterialPageRoute(builder: (_) => const ChatListPage()));
+              }
+              },
+            )),
           const Divider(),
           ListTile(
             leading: const Icon(Icons.logout, color: Colors.redAccent),

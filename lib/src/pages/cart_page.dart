@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../state/cart_state.dart';
 import '../theme/app_theme.dart';
+import 'notifikasi_page.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
@@ -50,10 +51,17 @@ class CartPage extends StatelessWidget {
                       onPressed: cart.items.isEmpty
                           ? null
                           : () {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                    content: Text(
-                                        'Checkout belum terhubung ke backend')),
+                              final checkoutItems = List.from(cart.items);
+                              final checkoutTotal = cart.totalPrice;
+                              cart.clear(); // gunakan method yang sudah ada
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => NotifikasiPage(
+                                    checkoutItems: checkoutItems,
+                                    checkoutTotal: checkoutTotal,
+                                  ),
+                                ),
                               );
                             },
                       child: const Text('Checkout'),
@@ -92,7 +100,7 @@ class CartPage extends StatelessWidget {
                       subtitle: Text(
                           'Rp ${(item.price * item.qty).toStringAsFixed(0)}'),
                       trailing: SizedBox(
-                        width: 140,
+                        width: 160,
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../pages/notifikasi_page.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppBar({super.key});
@@ -36,7 +37,11 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.blueAccent,
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => NotifikasiPage()),
+            );
+          },
           icon: const Icon(
             Icons.notifications_outlined,
             size: 28,
